@@ -21,6 +21,8 @@
 <body>
     <button type="button" onclick="buscarDados()">Fetch:</button>
 
+    <button type="button" onclick="criarDados()">Criar dados:</button>
+
     <div class="container-fluid" id="html">
 
     </div>
@@ -68,6 +70,23 @@
 
             html.innerHTML = h;
         }
+
+        async function criarDados() {
+            let pessoa = {
+                "nome": "Teste 12-05",
+                "email": "email@site.com"
+            };
+
+            let response = await fetch ("https://academico.espm.br/testeapi/criar", {
+                method: "post",
+                body: JSON.stringify(pessoa),
+                headers: {
+                    "content-type": "application/json"
+                }
+            });
+        }
+
+
     </script>
 </body>
 
