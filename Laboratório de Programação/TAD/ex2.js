@@ -1,22 +1,27 @@
 let funcionarios = []
 
-function enviarLista (event) {
+function enviarLista(event) {
     event.preventDefault()
 
     let nome = document.getElementById("inputNome").value
     let tamanho = document.getElementById("inputEspaco").value
-    let espacoDeUso = { nome: nome, tamanho: tamanho}
+    let espacoDeUso = { nome: nome, tamanho: tamanho }
 
     funcionarios.push(espacoDeUso)
+
+    document.getElementById("inputNome").value = ""
+    document.getElementById("inputEspaco").value = "1"
 
     atualizarLista()
 }
 
-function atualizarLista () {
+function atualizarLista() {
 
-    tamanho.sort(function(a, b){
+    funcionarios.sort(function (a, b) {
         return a.tamanho - b.tamanho
     })
+
+    $("#listaFuncionarios").empty();
 
     for (let i = 0; i < funcionarios.length; i++) {
         let card = '<div class="card">';
@@ -26,8 +31,8 @@ function atualizarLista () {
         card += '</div>';
         card += '</div>';
 
-        $("#funcionarios").append(card);
+        $("#listaFuncionarios").append(card);
     }
 }
 
-$("#funcionarios").submit(enviarLista);
+$("#formFuncionarios").submit(enviarLista);
