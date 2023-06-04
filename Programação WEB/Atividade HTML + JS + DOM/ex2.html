@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -86,7 +86,7 @@
             <button class="btn btn-primary" onclick="validarSenha()">Validar</button>
 
         </p>
-        
+
         <button class="btn btn-danger" onclick="apagarUltimoDigito()">Apagar</button>
 
         <div id="mensagem" class="mt-4"></div>
@@ -117,11 +117,14 @@
         }
 
         function exibirMensagem(mensagem, tipo) {
-            mensagemDiv.innerHTML = `
-        <div class="alert ${tipo}">${mensagem}</div>
+            mensagemDiv.innerHTML = 
+        `
+        <div class="alert ${tipo}">
+            ${mensagem}
+        </div>
       `
         }
-        
+
     </script>
 
 </body>
